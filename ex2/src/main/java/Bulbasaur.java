@@ -52,16 +52,21 @@ public class Bulbasaur {
     public String toString() {
         // TODO: Implement this method
         // Return a string representation of the Bulbasaur object
-        return getName() + " " + getLevel();
+        return "Level: " + getLevel() + ", ID: " + getID();
     }
 
     // equals method
     @Override
     public boolean equals(Object obj) {
-        // TODO: Implement this method
-        // Compare this Bulbasaur object with another object
-        return obj.equals(toString());
+        if (this == obj) return true; // Check if they are the same object
+        if (obj == null || getClass() != obj.getClass()) return false; // Check if the object is null or not of the same class
+
+        Bulbasaur bulbasaur = (Bulbasaur) obj;
+
+        // Compare both level and id
+        return id == bulbasaur.id && level == bulbasaur.level;
     }
+
 
     // copy method
     public Bulbasaur copy() {
